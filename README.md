@@ -7,7 +7,9 @@ Right click save as on web page in firefox, host in apache
 run selenium locally to make sure getting right variables and names
 
 examples
+
 python3
+
 driver = webdriver.Chrome()
 
 driver.get('https://path/to/login')
