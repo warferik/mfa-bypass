@@ -1,6 +1,7 @@
 # mfa-bypass
 Python3 script to bypass MFA through phishing
 
+Current config works for ping with push MFA enabled
 
 Right click save as on web page in firefox, host in apache
 
